@@ -1,72 +1,64 @@
-<!doctype html>
+<!DOCTYPE html>
 <html data-theme="retro" class="min-h-screen">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./output.css" rel="stylesheet">
-
-<link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
-<script src="https://cdn.tailwindcss.com"></script>
-
-<script src="./src/script.js" defer></script>
-
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./src/script.js" defer></script>
 </head>
 <body class="flex flex-col min-h-screen">
   <!-- Nav bar -->
   <div class="navbar bg-base-100 shadow z-10">
     <div class="flex-1">
       <a class="btn btn-ghost text-xl">Kaicha's Vault</a>
-      <input type="checkbox" value="pastel" class="toggle theme-controller" >
+      <input type="checkbox" value="pastel" class="toggle theme-controller">
     </div>
     <div class="flex-none">
       <ul class="menu menu-horizontal px-1">
-        <li><button id="addBook" onclick="my_modal_1.showModal()" class=" btn font-extrabold">Add book</button></li>
-
+        <li><button id="addBook" onclick="my_modal_1.showModal()" class="btn font-extrabold">Add book</button></li>
       </ul>
     </div>
   </div>
 
   <!-- Form modal -->
-
   <dialog id="my_modal_1" class="modal">
-    <div class="modal-box flex flex-col items-start gap-4"> <!-- Increased gap to 4 -->
+    <div class="modal-box flex flex-col items-start gap-4">
       <h3 class="text-lg font-bold">Please add your book details here!</h3>
       
-      <!-- All labels have w-full and input containers have min-width -->
       <label class="input input-bordered flex items-center gap-2 w-full font-bold">
         Enter Title
-        <input id="formTitle" type="text" class="grow min-w-0 font-normal" placeholder="Eg :- Daisy" /> <!-- Added min-w-0 -->
+        <input id="formTitle" type="text" class="grow min-w-0 font-normal" placeholder="Eg :- Daisy" />
       </label>
       
       <label class="input input-bordered flex items-center gap-2 w-full font-bold">
         Enter Genre
-        <input id="formGenre" type="text" class="grow min-w-0 font-normal" placeholder="Eg :- Non-fiction" /> <!-- Added min-w-0 -->
+        <input id="formGenre" type="text" class="grow min-w-0 font-normal" placeholder="Eg :- Non-fiction" />
       </label>
 
       <label class="input input-bordered flex items-center gap-2 w-full font-bold">
         Enter Pages
-        <input id="formPages" type="text" class="grow min-w-0 font-normal" placeholder="Eg :- 124" /> <!-- Added min-w-0 -->
+        <input id="formPages" type="text" class="grow min-w-0 font-normal" placeholder="Eg :- 124" />
       </label>
   
-      <!-- Checkbox container adjusted -->
       <label class="flex items-center justify-between gap-2 px-4 py-2 font-bold">
-        Read?<p>   </p>
+        Read?<p></p>
         <input id="formReadStatus" type="checkbox" value="false" onchange="this.setAttribute('value', this.checked.toString())" class="toggle" />
       </label>
   
-      <div class="modal-action w-full"> <!-- Added w-full -->
-        <form method="dialog" class="w-full flex justify-end gap-2"> <!-- Flex layout -->
+      <div class="modal-action w-full">
+        <form method="dialog" class="w-full flex justify-end gap-2">
           <button class="btn flex-shrink-0">Cancel</button>
-          <button class="submitBtn btn flex-shrink-0">Submit</button>
+          <button class="submitBtn btn flex-shrink-0" disabled>Submit</button>
         </form>
       </div>
     </div>
   </dialog>
 
-
   <!-- Main content -->
   <div class="flex flex-1 p-4 gap-4">
-    <!-- Left menu (1/3 width) -->
+    <!-- Left menu -->
     <div class="h-full">
       <div class="card bg-base-300 rounded-none h-full">
         <ul class="menu p-4 w-full">
@@ -76,7 +68,6 @@
           <li><a>Science</a></li>
           <li><a>History</a></li>
           <li><a>Biography</a></li>
-          <!-- Add more menu items to see scrolling -->
           <li><a>Technology</a></li>
           <li><a>Art</a></li>
           <li><a>Philosophy</a></li>
@@ -86,35 +77,12 @@
       </div>
     </div>
 
-    <!-- Right grid (2/3 width) -->
-    <div class="w-2/3 flex-col mx-auto">
-      <div id = "card-container" class="grid grid-cols-3 gap-4">
-        <!-- Add cards -->
+    <!-- Right grid -->
+    <div class="flex-1 max-w-full mx-auto">
+      <div id="card-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Card area -->
 
-        <!-- Card template -->
-        <div class="card bg-base-100 shadow-xl min-w-fit flex">
-          <figure>
-            <div class="w-full h-24 bg-gray-300"></div>
-          </figure>
-          <div class="card-body items-start">
-            <h2 class="card-title">Product</h2>
-            <p>Item description goes here</p>
-            <div class="flex gap-4">
-              <span>Read?</span>
-              <input id="formReadStatus" type="checkbox" value="false" onchange="this.setAttribute('value', this.checked.toString())" class="toggle" />
-            </div>
-            <div class="card-actions justify-end">
-              <button id = "removeBtn" class="btn btn-primary">Remove</button>
-
-            </div>
-          </div>
-        </div>
-        <!-- End of card -->
-
-
-
-
-
+        <!-- End area-->
       </div>
     </div>
   </div>
