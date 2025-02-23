@@ -88,19 +88,19 @@
 
     <!-- Right grid (2/3 width) -->
     <div class="w-2/3">
-      <div class="grid grid-cols-3 gap-4">
+      <div id = "card-container" class="grid grid-cols-3 gap-4">
         <!-- Add cards -->
 
         <!-- Card template -->
         <div class="card bg-base-100 shadow-xl min-w-fit">
           <figure>
-            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Shoes" />
+            <div class="w-full h-24 bg-gray-300"></div>
           </figure>
           <div class="card-body">
             <h2 class="card-title">Product</h2>
             <p>Item description goes here</p>
             <div class="card-actions justify-end">
-              <button class="btn btn-primary">Buy Now</button>
+              <button id = "removeBtn" class="btn btn-primary">Remove</button>
             </div>
           </div>
         </div>
