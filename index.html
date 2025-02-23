@@ -67,7 +67,7 @@
   <!-- Main content -->
   <div class="flex flex-1 p-4 gap-4">
     <!-- Left menu (1/3 width) -->
-    <div class="w-1/3 h-full">
+    <div class="h-full">
       <div class="card bg-base-300 rounded-none h-full">
         <ul class="menu p-4 w-full">
           <li class="menu-title">Categories</li>
@@ -87,20 +87,25 @@
     </div>
 
     <!-- Right grid (2/3 width) -->
-    <div class="w-2/3">
+    <div class="w-2/3 flex-col mx-auto">
       <div id = "card-container" class="grid grid-cols-3 gap-4">
         <!-- Add cards -->
 
         <!-- Card template -->
-        <div class="card bg-base-100 shadow-xl min-w-fit">
+        <div class="card bg-base-100 shadow-xl min-w-fit flex">
           <figure>
             <div class="w-full h-24 bg-gray-300"></div>
           </figure>
-          <div class="card-body">
+          <div class="card-body items-start">
             <h2 class="card-title">Product</h2>
             <p>Item description goes here</p>
+            <div class="flex gap-4">
+              <span>Read?</span>
+              <input id="formReadStatus" type="checkbox" value="false" onchange="this.setAttribute('value', this.checked.toString())" class="toggle" />
+            </div>
             <div class="card-actions justify-end">
               <button id = "removeBtn" class="btn btn-primary">Remove</button>
+
             </div>
           </div>
         </div>
