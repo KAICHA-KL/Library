@@ -8,6 +8,8 @@
 <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
 
+<script src="./src/script.js" defer></script>
+
 </head>
 <body class="flex flex-col min-h-screen">
   <!-- Nav bar -->
@@ -33,23 +35,23 @@
       <!-- All labels have w-full and input containers have min-width -->
       <label class="input input-bordered flex items-center gap-2 w-full font-bold">
         Enter Title
-        <input type="text" class="grow min-w-0 font-normal" placeholder="Eg :- Daisy" /> <!-- Added min-w-0 -->
+        <input id="formTitle" type="text" class="grow min-w-0 font-normal" placeholder="Eg :- Daisy" /> <!-- Added min-w-0 -->
       </label>
       
       <label class="input input-bordered flex items-center gap-2 w-full font-bold">
         Enter Genre
-        <input type="text" class="grow min-w-0 font-normal" placeholder="Eg :- Non-fiction" /> <!-- Added min-w-0 -->
+        <input id="formGenre" type="text" class="grow min-w-0 font-normal" placeholder="Eg :- Non-fiction" /> <!-- Added min-w-0 -->
       </label>
 
       <label class="input input-bordered flex items-center gap-2 w-full font-bold">
         Enter Pages
-        <input type="text" class="grow min-w-0 font-normal" placeholder="Eg :- 124" /> <!-- Added min-w-0 -->
+        <input id="formPages" type="text" class="grow min-w-0 font-normal" placeholder="Eg :- 124" /> <!-- Added min-w-0 -->
       </label>
   
       <!-- Checkbox container adjusted -->
       <label class="flex items-center justify-between gap-2 px-4 py-2 font-bold">
         Read?<p>   </p>
-        <input type="checkbox" value="false" class="toggle" />
+        <input id="formReadStatus" type="checkbox" value="false" onchange="this.setAttribute('value', this.checked.toString())" class="toggle" />
       </label>
   
       <div class="modal-action w-full"> <!-- Added w-full -->
